@@ -512,22 +512,8 @@ document.querySelectorAll(".reveal").forEach(el=>{
 observer.observe(el);
 });
 
-function sendLead(){
 <script>
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("active");
-}
-});
-});
-
-document.querySelectorAll(".reveal").forEach(el=>{
-observer.observe(el);
-});
-
 function sendLead(){
-
 let name = document.getElementById("name").value;
 let property = document.getElementById("property").value;
 let issue = document.getElementById("issue").value;
@@ -543,18 +529,6 @@ let url = "https://wa.me/601165016818?text=" + message;
 window.open(url, "_blank");
 }
 </script>
-
-let url=`https://wa.me/601165016818?text=
-Name:${name}%0AProperty:${property}%0AIssue:${issue}`;
-
-window.open(url,"_blank");
-}
-
-</script>
-
-<a href="https://wa.me/601165016818" class="wa-btn" target="_blank">
-💬
-</a>
   
 </body>
 
@@ -586,12 +560,4 @@ document.body.appendChild(overlay);
 </script>
   
 </html>
-
-<script>
-document.querySelectorAll(".gallery img").forEach(img=>{
-img.onclick=()=>{
-window.open(img.src);
-};
-});
-</script>
 
