@@ -12,14 +12,18 @@ grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
 gap:18px;
 }
 
-.gallery-item{
-position:relative;
-overflow:hidden;
-border-radius:14px;
-height:220px;
-border:1px solid rgba(255,255,255,0.05);
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-transition:0.3s;
+.gallery-item::after{
+content:"SYSTEM EXECUTION";
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:10px;
+font-size:11px;
+letter-spacing:1px;
+background:linear-gradient(transparent, rgba(0,0,0,0.8));
+opacity:0;
+transition:0.4s;
 }
 
 .gallery-item img{
@@ -37,6 +41,10 @@ transition:0.5s;
 transform:scale(1.08);
 box-shadow:0 20px 40px rgba(0,0,0,0.5);
 transform:translateY(-5px);
+}
+
+.gallery-item:hover::after{
+opacity:1;
 }
 
 /* =========================
