@@ -277,3 +277,7 @@ height:100% !important;
 object-fit:cover !important;
 display:block !important;
 }
+
+.gallery-item{
+width:calc(25% - 18px);
+}
