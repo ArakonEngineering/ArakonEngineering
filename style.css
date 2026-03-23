@@ -50,13 +50,17 @@ padding:120px 20px;
 }
 
 .hero{
-height:auto;
-padding:120px 20px;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding-top:120px; /* instead of margin hack */
+background:radial-gradient(circle at center, #1a1a1f, #0e0e11);
 }
 
 .hero-logo{
-margin-top:60px;
-width:160px;
+margin-top:0;
 }
 
 .hero h1{
