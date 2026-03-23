@@ -9,7 +9,17 @@ scroll-behavior:smooth;
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-gap:18px;
+gap:14px;
+}
+
+.gallery-item{
+position:relative;
+overflow:hidden;
+border-radius:14px;
+aspect-ratio:4/3; /* THIS is the fix */
+border:1px solid rgba(255,255,255,0.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:0.3s;
 }
 
 .gallery-item::after{
