@@ -513,9 +513,24 @@ observer.observe(el);
 });
 
 function sendLead(){
-let name=document.getElementById("name").value;
-let property=document.getElementById("property").value;
-let issue=document.getElementById("issue").value;
+<script>
+function sendLead(){
+
+let name = document.getElementById("name").value;
+let property = document.getElementById("property").value;
+let issue = document.getElementById("issue").value;
+
+let message = `Hello Arakon Engineering,%0A%0A
+Name: ${name}%0A
+Property: ${property}%0A
+Issue: ${issue}%0A%0A
+Requesting site inspection.`;
+
+let url = "https://wa.me/601165016818?text=" + message;
+
+window.open(url, "_blank");
+}
+</script>
 
 let url=`https://wa.me/601165016818?text=
 Name:${name}%0AProperty:${property}%0AIssue:${issue}`;
