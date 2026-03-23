@@ -89,7 +89,7 @@ box-shadow:0 15px 35px rgba(0,0,0,0.6);
 /* HERO FIX (DESKTOP + GLOBAL) */
 .hero{
 height:100vh;
-padding:0 20px;
+padding:0 80px;
 }
 
 .hero-logo{
