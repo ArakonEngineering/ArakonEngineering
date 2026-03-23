@@ -49,3 +49,47 @@ display:grid;
 grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
 gap:18px;
 }
+
+/* =========================
+   MOBILE FIX (FULL SITE)
+========================= */
+
+@media (max-width:768px){
+
+.section{
+padding:120px 20px;
+}
+
+.hero{
+height:auto;
+padding:120px 20px;
+}
+
+.hero-logo{
+margin-top:60px;
+width:160px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.nav-inner{
+padding:12px 16px;
+}
+
+.menu a{
+margin-left:14px;
+font-size:12px;
+}
+
+.split{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+}
