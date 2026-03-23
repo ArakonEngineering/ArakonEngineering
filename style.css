@@ -88,18 +88,13 @@ box-shadow:0 15px 35px rgba(0,0,0,0.6);
 
 /* HERO FIX (DESKTOP + GLOBAL) */
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding-top:80px;
-background:radial-gradient(circle at center, #1a1a1f, #0e0e11);
+height:100vh;
+padding:0 20px;
 }
 
 .hero-logo{
 width:240px;
-margin-top:0;
+margin:0; /* clean reset */
 margin-bottom:10px;
 }
 
@@ -125,7 +120,7 @@ background:radial-gradient(circle at center, #1a1a1f, #0e0e11);
 
 .hero-logo{
 width:240px;
-margin-top:0; /* REMOVE 290px */
+margin-top:0;
 margin-bottom:10px;
 }
 
