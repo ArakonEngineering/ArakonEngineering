@@ -88,8 +88,12 @@ box-shadow:0 15px 35px rgba(0,0,0,0.6);
 
 /* HERO FIX (DESKTOP + GLOBAL) */
 .hero{
-height:100vh;
-padding:0 80px;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 20px;
 }
 
 .hero-logo{
