@@ -566,12 +566,7 @@ window.open(url, "_blank");
 }
 </script>
 
-<a href="https://wa.me/601165016818?text=Hello%20I%20need%20pump%20service" class="wa-btn">
-📞
-</a>
-  
-</body>
-
+<!-- IMAGE POPUP -->
 <script>
 document.querySelectorAll(".gallery-item img").forEach(img=>{
 img.onclick = ()=>{
@@ -598,6 +593,20 @@ document.body.appendChild(overlay);
 };
 });
 </script>
-  
-</html>
+
+<!-- STAGGER ANIMATION (ADD THIS) -->
+<script>
+window.addEventListener("load", () => {
+document.querySelectorAll(".grid .card, .gallery-item").forEach((el, i) => {
+el.style.transitionDelay = (i * 0.05) + "s";
+});
+});
+</script>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/601165016818?text=Hello%20I%20need%20pump%20service" class="wa-btn">
+📞
+</a>
+
+</body>
 
