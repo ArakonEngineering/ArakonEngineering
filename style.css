@@ -126,3 +126,47 @@ flex:1 1 100%;
 max-width:100%;
 }
 }
+
+/* =========================
+   FORCE GRID FIX (NO HTML TOUCH)
+========================= */
+
+.gallery{
+display:flex !important;
+flex-wrap:wrap !important;
+gap:18px !important;
+}
+
+.gallery-item{
+width:calc(25% - 18px) !important;
+height:220px;
+overflow:hidden;
+border-radius:14px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+.gallery-item{
+width:calc(33.33% - 18px) !important;
+}
+}
+
+@media(max-width:768px){
+.gallery-item{
+width:calc(50% - 18px) !important;
+}
+}
+
+@media(max-width:480px){
+.gallery-item{
+width:100% !important;
+}
+}
