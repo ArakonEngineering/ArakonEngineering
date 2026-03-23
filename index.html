@@ -528,3 +528,11 @@ window.open(url,"_blank");
 </body>
 </html>
 
+<script>
+document.querySelectorAll(".gallery img").forEach(img=>{
+img.onclick=()=>{
+window.open(img.src);
+};
+});
+</script>
+
