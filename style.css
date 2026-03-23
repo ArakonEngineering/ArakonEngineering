@@ -155,3 +155,35 @@ transition:0.3s;
 transform:scale(1.1);
 box-shadow:0 15px 35px rgba(0,0,0,0.6);
 }
+
+.card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.08);
+padding:32px;
+border-radius:16px;
+transition:all 0.4s ease;
+backdrop-filter:blur(10px);
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.15),transparent);
+transition:0.6s;
+}
+
+.card:hover::before{
+left:100%;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 25px 60px rgba(0,0,0,0.6);
+border:1px solid rgba(255,255,255,0.15);
+}
