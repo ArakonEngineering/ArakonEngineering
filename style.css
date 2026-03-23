@@ -2,6 +2,14 @@
    PORTFOLIO (PRO)
 ========================= */
 
+.gallery img{
+display:block;
+}
+
+.gallery{
+grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+}
+
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
