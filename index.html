@@ -1,11 +1,26 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Arakon Engineering</title>
 
 <style>
+
+/* =========================
+   DESIGN SYSTEM
+========================= */
+:root{
+--bg:#0e0e11;
+--surface:#151519;
+--primary:#37353E;
+--secondary:#44444E;
+--accent:#715A5A;
+--light:#D3DAD9;
+--muted:#9aa0a6;
+}
 
 /* =========================
    BASE
@@ -13,35 +28,69 @@
 body{
 margin:0;
 font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-background:#0e0e11;
-color:#D3DAD9;
+background:var(--bg);
+color:var(--light);
 line-height:1.7;
 }
 
 /* =========================
-   NAV
+   NAVBAR
 ========================= */
 .nav{
 position:fixed;
 top:0;
 width:100%;
-background:rgba(14,14,17,0.85);
+background:rgba(14,14,17,0.75);
 backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.05);
 z-index:100;
 }
 
 .nav-inner{
-max-width:1200px;
+max-width:1280px;
 margin:auto;
 display:flex;
 justify-content:space-between;
-padding:15px 20px;
+align-items:center;
+padding:18px 28px;
 }
 
+/* BRAND */
+.brand{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.logo{
+height:60px;
+}
+
+.brand-text{
+display:flex;
+flex-direction:column;
+line-height:1.1;
+}
+
+.brand-name{
+font-size:14px;
+letter-spacing:2px;
+font-weight:600;
+}
+
+.brand-sub{
+font-size:11px;
+letter-spacing:2px;
+color:var(--muted);
+}
+
+/* MENU */
 .menu a{
-margin-left:20px;
+margin-left:28px;
 text-decoration:none;
-color:#fff;
+color:var(--light);
+font-size:13px;
+letter-spacing:1px;
 opacity:0.6;
 }
 .menu a:hover{opacity:1}
@@ -55,124 +104,153 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:20px;
+padding:0 20px;
+background:radial-gradient(circle at center, #1a1a1f, #0e0e11);
 }
 
+.hero-inner{
+max-width:900px;
+}
+
+/* HERO LOGO */
+.hero-logo{
+width:240px;
+margin-bottom:10px;
+margin-top:290px; /* THIS is the real fix */
+filter: drop-shadow(0 25px 60px rgba(0,0,0,0.7));
+animation:float 6s ease-in-out infinite;
+}
+  
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+/* HEADLINE */
 .hero h1{
-font-size:clamp(40px,6vw,80px);
+font-size:clamp(54px,6vw,96px);
+font-weight:600;
+letter-spacing:-1px;
+line-height:1.05;
 margin:0;
 }
 
+/* SUBTEXT */
 .hero p{
-color:#9aa0a6;
-max-width:600px;
-margin:20px auto;
+margin:30px auto;
+font-size:17px;
+color:var(--muted);
+max-width:700px;
 }
+
+/* META */
+.hero-meta{
+font-size:14px;
+color:#8a8f94;
+margin-top:10px;
+}
+
+/* BUTTON */
+.btn{
+margin-top:40px;
+padding:15px 36px;
+border-radius:999px;
+background:var(--light);
+color:#000;
+font-size:14px;
+font-weight:500;
+display:inline-block;
+transition:0.3s;
+}
+.btn:hover{transform:translateY(-2px);}
 
 /* =========================
    SECTION
 ========================= */
 .section{
-padding:120px 20px;
+padding:250px 10px;
 max-width:1200px;
 margin:auto;
 }
 
 .section-title{
 text-align:center;
-font-size:32px;
-margin-bottom:60px;
+font-size:34px;
+margin-bottom:80px;
+font-weight:500;
 }
+
+/* =========================
+   SPLIT
+========================= */
+.split{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:100px;
+align-items:center;
+}
+
+.split p{color:var(--muted);}
 
 /* =========================
    GRID
 ========================= */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 /* =========================
    CARD
 ========================= */
 .card{
-background:#151519;
-padding:25px;
-border-radius:12px;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.05);
+padding:32px;
+border-radius:16px;
+transition:0.4s;
 }
-
-/* =========================
-   PORTFOLIO (FIXED)
-========================= */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-gap:18px;
-}
-
-.gallery-item{
-position:relative;
-overflow:hidden;
-border-radius:12px;
-height:220px;
-background:#111;
-}
-
-.gallery-item img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-transition:0.5s;
-}
-
-.gallery-item:hover img{
-transform:scale(1.1);
-}
-
-.gallery-item::after{
-content:"PROJECT EXECUTION";
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-padding:10px;
-font-size:11px;
-background:linear-gradient(transparent, rgba(0,0,0,0.8));
-opacity:0;
-transition:0.3s;
-}
-
-.gallery-item:hover::after{
-opacity:1;
+.card:hover{
+transform:translateY(-6px);
 }
 
 /* =========================
    CONTACT
 ========================= */
 .contact{
+padding:160px 20px;
 text-align:center;
-padding:100px 20px;
+background:linear-gradient(180deg,#0e0e11,#16161a);
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:12px;
+max-width:420px;
+margin:40px auto 0;
 }
 
 input{
-display:block;
-width:100%;
-max-width:400px;
-margin:10px auto;
-padding:12px;
+padding:14px;
+border-radius:10px;
 border:none;
 background:#1c1c21;
-color:#fff;
+color:white;
 }
 
-button{
-padding:14px 30px;
-border:none;
-background:#fff;
-color:#000;
-cursor:pointer;
+/* =========================
+   ANIMATION
+========================= */
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:0.8s ease;
+}
+.reveal.active{
+opacity:1;
+transform:translateY(0);
 }
 
 </style>
@@ -183,70 +261,273 @@ cursor:pointer;
 <!-- NAV -->
 <header class="nav">
 <div class="nav-inner">
-<div><b>ARAKON</b></div>
+
+<div class="brand">
+  <img src="https://i.ibb.co/mrMzjVvF/AE-3-removebg-preview.png" class="logo">
+  <div class="brand-text">
+    <span class="brand-name">ARAKON</span>
+    <span class="brand-sub">ENGINEERING</span>
+  </div>
+</div>
+
 <nav class="menu">
 <a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#value">Why Us</a>
 <a href="#services">Services</a>
-<a href="#portfolio">Portfolio</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </div>
 </header>
 
 <!-- HERO -->
 <section id="home" class="hero">
-<div>
-<h1>System Stability Engineering</h1>
-<p>Pump systems, fire protection, and control panel expertise designed for zero failure environments.</p>
+
+<div class="hero-inner reveal">
+
+<img src="https://i.ibb.co/mrMzjVvF/AE-3-removebg-preview.png" class="hero-logo">
+
+<h1>
+RM1 Million<br>
+System Protection
+</h1>
+
+<p>
+Structured pump system engineering, preventive maintenance frameworks,
+and control panel expertise designed to eliminate operational failure
+across high-density residential and commercial environments.
+</p>
+
+<div class="hero-meta">
+FOC Maintenance • 3D Capability • Off-Peak Execution
 </div>
+
+<a href="https://wa.me/601165016818?text=Site%20Inspection%20Request" class="btn">
+Request Site Inspection
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+
+<div class="split reveal">
+
+<div>
+<h2>Engineering Discipline. Operational Certainty.</h2>
+
+<p>
+Arakon Engineering operates with a defined specialization in pump systems,
+fire protection infrastructure, and control panel engineering.
+</p>
+
+<p>
+Our methodology prioritizes preventive maintenance, structured diagnostics,
+and long-term system stability.
+</p>
+
+<p>
+We engineer outcomes — not temporary fixes.
+</p>
+
+</div>
+
+<div class="card">
+<h3>Operational Framework</h3>
+<p>
+Reduced breakdown frequency, extended asset lifespan, and predictable
+maintenance outcomes through structured engineering execution.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY -->
+<section id="value" class="section">
+
+<h2 class="section-title reveal">Strategic Advantages</h2>
+
+<div class="grid">
+
+<div class="card reveal">
+<h3>RM1 Million Coverage</h3>
+<p>Financial risk mitigation through structured component coverage.</p>
+</div>
+
+<div class="card reveal">
+<h3>FOC Maintenance</h3>
+<p>Integrated servicing ensuring consistent system performance.</p>
+</div>
+
+<div class="card reveal">
+<h3>3D Capability</h3>
+<p>Execution in complex and high-risk environments.</p>
+</div>
+
+<div class="card reveal">
+<h3>Off-Peak Strategy</h3>
+<p>Maintenance aligned to avoid operational disruption.</p>
+</div>
+
+</div>
+
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="section">
-<h2 class="section-title">Services</h2>
-<div class="grid">
-<div class="card">Fire Pump Systems</div>
-<div class="card">Water Pump Infrastructure</div>
-<div class="card">Control Panels</div>
-<div class="card">System Rehab</div>
-</div>
-</section>
 
+<h2 class="section-title reveal">Engineering Scope</h2>
+
+<div class="grid">
+
+<div class="card reveal">
+<h3>Fire Pump Systems</h3>
+<p>Testing, servicing, compliance assurance.</p>
+</div>
+
+<div class="card reveal">
+<h3>Water Pump Infrastructure</h3>
+<p>Pressure systems and supply stability.</p>
+</div>
+
+<div class="card reveal">
+<h3>Control Panel Engineering</h3>
+<p>PLC diagnostics and electrical systems.</p>
+</div>
+
+<div class="card reveal">
+<h3>System Rehabilitation</h3>
+<p>End-to-end pump room restructuring.</p>
+</div>
+
+</div>
+  
 <!-- PORTFOLIO -->
-<section id="portfolio" class="section">
-<h2 class="section-title">Project Portfolio</h2>
+<section class="section">
+
+<h2 class="section-title reveal">Project Portfolio</h2>
 
 <div class="gallery">
 
-<div class="gallery-item"><img loading="lazy" src="https://i.ibb.co/prfqsm1P/Untitled-design-10.png"></div>
-<div class="gallery-item"><img loading="lazy" src="https://i.ibb.co/jZVw1k4G/Untitled-design-11.png"></div>
-<div class="gallery-item"><img loading="lazy" src="https://i.ibb.co/35j53Vgq/Whats-App-Image-2026-02-22-at-5-58-18-PM.jpg"></div>
-<div class="gallery-item"><img loading="lazy" src="https://i.ibb.co/KjL1zfqQ/Whats-App-Image-2026-02-22-at-5-58-21-PM-3.jpg"></div>
-<div class="gallery-item"><img loading="lazy" src="https://i.ibb.co/v6b8J3zM/Whats-App-Image-2026-02-22-at-5-58-24-PM-2.jpg"></div>
-<div class="gallery-item"><img loading="lazy" src="https://i.ibb.co/jkYH89cV/Whats-App-Image-2026-02-22-at-5-58-25-PM-1.jpg"></div>
+<!-- AUTO GENERATED FROM YOUR IMAGES -->
+
+<div class="gallery-item"><img src="https://i.ibb.co/prfqsm1P/Untitled-design-10.png"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/jZVw1k4G/Untitled-design-11.png"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/35j53Vgq/Whats-App-Image-2026-02-22-at-5-58-18-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/KjL1zfqQ/Whats-App-Image-2026-02-22-at-5-58-21-PM-3.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/v6b8J3zM/Whats-App-Image-2026-02-22-at-5-58-24-PM-2.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/jkYH89cV/Whats-App-Image-2026-02-22-at-5-58-25-PM-1.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/whtNr20z/Whats-App-Image-2026-02-22-at-5-58-25-PM-2.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/HJ02F3M/Whats-App-Image-2026-02-22-at-5-58-26-PM-2.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/0pvW8BfS/Whats-App-Image-2026-02-22-at-5-58-28-PM-2.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/G3M6J25D/Whats-App-Image-2026-02-22-at-5-58-29-PM-2.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/5xczbTyR/Whats-App-Image-2026-02-22-at-5-58-29-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/v4yYBcFR/Whats-App-Image-2026-02-22-at-5-58-33-PM-1.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/4RsSwgVp/Whats-App-Image-2026-02-22-at-5-59-19-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/5hSQ9rcM/Whats-App-Image-2026-02-22-at-5-59-20-PM-1.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/dwDd0wgR/Whats-App-Image-2026-02-22-at-5-59-22-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/SXKcM6JQ/Whats-App-Image-2026-02-22-at-5-59-52-PM-1.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/J8BWYWz/Whats-App-Image-2026-02-22-at-5-59-53-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/XdGr7jG/Whats-App-Image-2026-02-22-at-6-00-01-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/jP6TKsNg/Whats-App-Image-2026-02-22-at-6-00-04-PM-1.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/1Y15s4v1/Whats-App-Image-2026-02-22-at-6-00-04-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/VWG7LszP/Whats-App-Image-2026-02-22-at-6-00-06-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/GQXpqy72/Whats-App-Image-2026-02-22-at-6-00-16-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/ycTXLkZK/Whats-App-Image-2026-02-22-at-6-00-48-PM-1.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/mPDCcHZ/Whats-App-Image-2026-02-22-at-6-01-08-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/23g9LZnZ/Whats-App-Image-2026-02-22-at-6-01-09-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/q64Hv1j/Whats-App-Image-2026-02-22-at-6-01-11-PM-1.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/0R8Mgg4Q/Whats-App-Image-2026-02-22-at-6-01-11-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/W4ZYfsrd/Whats-App-Image-2026-02-22-at-6-20-12-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/N2kjqD2k/Whats-App-Image-2026-02-22-at-6-20-28-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/W4YLZMhf/Whats-App-Image-2026-02-22-at-6-22-22-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/93n7kjqG/Whats-App-Image-2026-02-22-at-6-22-23-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/LX5tDnnk/Whats-App-Image-2026-02-22-at-6-35-53-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/MyDZtsbL/Whats-App-Image-2026-02-22-at-6-36-54-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/XkGg5HZs/Whats-App-Image-2026-02-22-at-6-39-12-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/qFkMZ4Jm/Whats-App-Image-2026-02-22-at-6-40-12-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/k28842cb/Whats-App-Image-2026-02-22-at-7-11-24-PM-1.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/gLbTF0rB/Whats-App-Image-2026-02-22-at-7-11-52-PM-1.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/Pvytx17k/Whats-App-Image-2026-02-22-at-7-11-52-PM.jpg"></div>
+
+<div class="gallery-item"><img src="https://i.ibb.co/qYNG9JwP/Whats-App-Image-2026-02-22-at-7-14-09-PM.jpg"></div>
+<div class="gallery-item"><img src="https://i.ibb.co/vvzgcqz8/Whats-App-Image-2026-02-22-at-7-20-22-PM-1.jpg"></div>
 
 </div>
+</section>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
 
-<h2>Request Site Inspection</h2>
+<div class="reveal">
 
-<input placeholder="Full Name">
-<input placeholder="Property">
-<input placeholder="Issue">
+<h2>Request Technical Assessment</h2>
 
-<button onclick="send()">Submit</button>
+<p style="color:#9aa0a6;">
+Direct engagement with our engineering team for system evaluation and solution planning.
+</p>
+
+<form onsubmit="sendLead(); return false;">
+<input id="name" placeholder="Full Name" required>
+<input id="property" placeholder="Property Name" required>
+<input id="issue" placeholder="System Issue" required>
+
+<button class="btn">Submit Request</button>
+</form>
+
+</div>
 
 </section>
 
 <script>
-function send(){
-window.open("https://wa.me/601165016818?text=Site%20Inspection%20Request");
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active");
 }
+});
+});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el);
+});
+
+function sendLead(){
+let name=document.getElementById("name").value;
+let property=document.getElementById("property").value;
+let issue=document.getElementById("issue").value;
+
+let url=`https://wa.me/601165016818?text=
+Name:${name}%0AProperty:${property}%0AIssue:${issue}`;
+
+window.open(url,"_blank");
+}
+
 </script>
 
 </body>
+</html>
+    
+  </body>
+  
 </html>
