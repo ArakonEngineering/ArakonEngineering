@@ -129,6 +129,7 @@ transform:translateY(0) scale(1);
 body{
 background:linear-gradient(180deg,#0e0e11,#16161a);
 letter-spacing:0.3px;
+scroll-behavior:smooth;
 }
 
 .wa-btn{
