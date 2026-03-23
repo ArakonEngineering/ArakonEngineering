@@ -3,23 +3,22 @@ scroll-behavior:smooth;
 }
 
 /* =========================
-   PORTFOLIO GRID (CLEAN)
+   MASONRY GRID (ELITE)
 ========================= */
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-gap:14px;
+column-count:4;
+column-gap:14px;
 }
 
 .gallery-item{
+break-inside:avoid;
+margin-bottom:14px;
 position:relative;
 overflow:hidden;
 border-radius:14px;
-aspect-ratio:4/3;
 border:1px solid rgba(255,255,255,0.05);
 box-shadow:0 10px 25px rgba(0,0,0,0.3);
-transition:all 0.4s ease;
 }
 
 .gallery-item img{
