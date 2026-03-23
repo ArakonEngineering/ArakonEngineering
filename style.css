@@ -102,12 +102,14 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding-top:120px; /* instead of margin hack */
+padding-top:120px; /* space for navbar */
 background:radial-gradient(circle at center, #1a1a1f, #0e0e11);
 }
 
 .hero-logo{
-margin-top:0;
+width:240px;
+margin-top:0; /* REMOVE 290px */
+margin-bottom:10px;
 }
 
 .hero h1{
