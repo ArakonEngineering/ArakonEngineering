@@ -264,3 +264,12 @@ column-count:2;
 column-count:1;
 }
 }
+
+img{
+content-visibility:auto;
+}
+
+.section-title{
+letter-spacing:1px;
+text-transform:uppercase;
+}
