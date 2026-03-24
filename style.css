@@ -89,9 +89,6 @@ box-shadow:0 15px 35px rgba(0,0,0,0.6);
 
 /* HERO FIX (DESKTOP + GLOBAL) */
 .hero{
-background:
-radial-gradient(circle at 50% 30%, rgba(255,255,255,0.04), transparent 60%),
-linear-gradient(180deg,#0e0e11,#16161a);
 min-height:100vh;
 display:flex;
 align-items:center;
