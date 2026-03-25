@@ -32,22 +32,13 @@ color:var(--light);
 line-height:1.7;
 }
 
-<body>
-
-<!-- EMERGENCY BAR -->
-<div style="background:#25D366;color:#000;text-align:center;padding:8px;font-size:12px;font-weight:600;">
-🚨 Emergency Pump Breakdown? Immediate Response Available 24/7
-</div>
-
-<!-- NAV -->
-<header class="nav">
 
 /* =========================
    NAVBAR
 ========================= */
 .nav{
 position:fixed;
-top:0;
+top:32px;
 width:100%;
 background:rgba(14,14,17,0.75);
 backdrop-filter:blur(10px);
@@ -267,11 +258,31 @@ transition:0.8s ease;
 opacity:1;
 transform:translateY(0);
 }
+  
+/* EMERGENCY BAR */
+.emergency-bar{
+position:fixed;
+top:0;
+width:100%;
+background:#25D366;
+color:#000;
+text-align:center;
+padding:8px;
+font-size:12px;
+font-weight:600;
+z-index:999;
+}
 
 </style>
 </head>
+  
+<body> 
 
-<body>
+ <div class="emergency-bar">
+🚨 Emergency Pump Breakdown? Immediate Response Available 24/7
+</div> 
+  
+
 
 <!-- NAV -->
 <header class="nav">
@@ -304,62 +315,86 @@ transform:translateY(0);
 <img src="https://i.ibb.co/mrMzjVvF/AE-3-removebg-preview.png" class="hero-logo">
 
 <h1>
-RM1 Million<br>
-System Protection
+RM1 MILLION<br>
+SYSTEM PROTECTION
 </h1>
 
+<h2 class="hero-sub">
+Engineered to Prevent Failure
+</h2>
+
 <p>
-Structured pump system engineering, preventive maintenance frameworks,
-and control panel expertise designed to eliminate operational failure
-across high-density residential and commercial environments.
+  
 </p>
 
-<a href="https://wa.me/601165016818?text=Site%20Inspection%20Request" 
-class="btn"
-style="margin-top:5px;">
-Request Site Inspection
+<a href="https://wa.me/601165016818?text=Site%20Inspection%20Request" class="btn">
+Request Immediate Inspection
 </a>
   
 <div style="margin-top:15px;font-size:15px;color:#7f8489;">
-Trusted by Residential & Commercial Properties • Rapid Response • Proven Execution
+Trusted by High Rise Residential & Commercial Properties
 </div>
 
-<div style="margin-top:20px;font-size:13px;color:#8a8f94;line-height:1.8;">
-✔ <strong>Free Site Inspection</strong>
-✔ <strong>24/7 Emergency Response</strong>
-✔ <strong>KL & Selangor Coverage</strong>  
-✔ <strong>FOC Maintenance</strong>
-✔ <strong>3D Capability</strong>
-✔ <strong>Off-Peak Execution</strong>
+<div class="hero-features">
+<span>Free Site Inspection</span>
+<span>KL & Selangor</span>
+<span>Serving Condominium JMB & MC</span>
 </div>
 
-<div style="margin-top:15px;font-size:12px;color:#6f757a;line-height:1.6;">
-✔ <strong>Serving Condominium JMB & MC</strong>
-✔ <strong>Experienced in High-Rise Systems</strong>
-✔ <strong>Fast Response Within Hours</strong>
-</div>
   
+</section>
+  
+<section class="section pain">
+
+<h2>Failure Has Consequences. We Remove Them</h2>
+
+<p>
+Breakdowns damage reputation, halt operations, and erode revenue.We detect and eliminate failure before it begins to delivering uninterrupted performance and total control.
+</p>
+
+</section>
+  
+<section class="section pain 1">
+
+<h2>One Failure Compromises Everything.</h2>
+
+<p>
+A single pump breakdown can destabilize building operations, trigger tenant escalation, and expose the property to immediate reputational and financial risk.
+
+We eliminate failure at its source delivering controlled, uninterrupted performance without exception.
+</p>
+
+</section>
+  
+<section class="section pain 2">
+
+<h2>We Don’t Repair Failures. We Remove Them.</h2>
+
+<p>
+Reactive fixes are temporary.
+We rebuild systems to eliminate failure risk entirely, delivering permanent reliability and uninterrupted operation.
+</p>
+
 </section>
 
 <!-- ADD THIS -->
 <section class="section" style="padding-top:40px;">
 
-<h2 class="section-title reveal">System Failure Is Not Optional</h2>
   
 <p style="text-align:center;color:#8a8f94;margin-bottom:40px;">
-Real On-Site Execution Across Pump Rooms, Control Panels & Infrastructure Systems
+Proven On-Site Execution Across Pump Rooms, Control Panels & Critical Infrastructure Systems
 </p>
 
 <div class="grid">
 
 <div class="card reveal">
-<h3>Water Disruption Risk</h3>
-<p>Loss of supply leads to tenant complaints and operational impact.</p>
+<h3>Water Disruption Is Not Tolerable</h3>
+<p>Loss of supply leads to tenant pressure and operational instability.</p>
 </div>
 
 <div class="card reveal">
-<h3>Fire Compliance Failure</h3>
-<p>Non-functional fire pump systems expose buildings to legal penalties.</p>
+<h3>Fire System Failure Is Non-Compliance</h3>
+<p>Inactive fire pump systems expose properties to enforcement action and serious liability.</p>
 </div>
 
 <div class="card reveal">
@@ -368,14 +403,14 @@ Real On-Site Execution Across Pump Rooms, Control Panels & Infrastructure System
 </div>
 
 <div class="card reveal">
-<h3>No Trial & Error Work</h3>
-<p>We apply structured diagnostics and engineering methods — not guesswork repairs.</p>
+<h3>No Guesswork. No Uncertainty.</h3>
+<p>Every intervention is driven by structured diagnostics and engineered precision, never trial and error.</p>
 </div>
   
 
 </div>
 
-</section>
+</section> 
 
 <!-- ABOUT -->
 <section id="about" class="section">
@@ -386,17 +421,15 @@ Real On-Site Execution Across Pump Rooms, Control Panels & Infrastructure System
 <h2>Engineering Discipline. Operational Certainty.</h2>
 
 <p>
-Arakon Engineering operates with a defined specialization in pump systems,
-fire protection infrastructure, and control panel engineering.
+Arakon Engineering operates with defined specialization in pump systems, fire protection infrastructure, and control panel engineering.
 </p>
 
 <p>
-Our methodology prioritizes preventive maintenance, structured diagnostics,
-and long-term system stability.
+Our methodology is built on structured diagnostics, preventive strategy, and long-term system stability.
 </p>
 
 <p>
-We engineer outcomes, not temporary fixes.
+We engineer outcomes, not temporary solutions.
 </p>
 
 </div>
@@ -404,8 +437,7 @@ We engineer outcomes, not temporary fixes.
 <div class="card">
 <h3>Operational Framework</h3>
 <p>
-Reduced breakdown frequency, extended asset lifespan, and predictable
-maintenance outcomes through structured engineering execution.
+Reduced breakdown frequency, extended asset lifespan, and predictable maintenance outcomes—achieved through structured engineering execution.
 </p>
 </div>
 
@@ -421,23 +453,23 @@ maintenance outcomes through structured engineering execution.
 <div class="grid">
 
 <div class="card reveal">
-<h3>RM1 Million Coverage</h3>
-<p>Financial risk mitigation through structured component coverage.</p>
+<h3>RM1 Million Liability Protection Framework</h3>
+<p>A structured coverage model engineered to contain financial risk, safeguard system integrity, and maintain operational continuity under all conditions.</p>
 </div>
 
 <div class="card reveal">
-<h3>FOC Maintenance</h3>
-<p>Integrated servicing ensuring consistent system performance.</p>
+<h3>Integrated FOC Maintenance</h3>
+<p>Structured servicing approach ensuring sustained performance and system reliability.</p>
 </div>
 
 <div class="card reveal">
-<h3>3D Capability</h3>
-<p>Execution in complex and high-risk environments.</p>
+<h3>Advanced 3D Capability</h3>
+<p>Structured execution across complex and high-risk environments with engineered precision and control.</p>
 </div>
 
 <div class="card reveal">
-<h3>Off-Peak Strategy</h3>
-<p>Maintenance aligned to avoid operational disruption.</p>
+<h3>Strategic Off-Peak Execution</h3>
+<p>Maintenance aligned with low-demand periods to ensure uninterrupted operations.</p>
 </div>
 
 </div>
